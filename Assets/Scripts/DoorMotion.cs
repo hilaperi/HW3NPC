@@ -23,7 +23,7 @@ public class DoorMotion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "RedKnight"|| other.gameObject.tag == "NPC")
+        if (other.gameObject.tag == "RedKnight")
         {
             animator.SetTrigger("Open");
             isOpen = true;
@@ -32,10 +32,11 @@ public class DoorMotion : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (isOpen)
+        if (isOpen && other.gameObject.tag == "RedKnight")
         {
             animator.SetTrigger("Close");
             isOpen = false;
+           
         }
     }
 }
