@@ -23,7 +23,7 @@ public class DoorMotion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "RedKnight")
+        if (other.gameObject.tag == "RedKnight"|| other.gameObject.tag == "NPC")
         {
             animator.SetTrigger("Open");
             isOpen = true;
